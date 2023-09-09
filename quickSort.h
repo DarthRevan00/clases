@@ -1,4 +1,3 @@
-#include "numeros.h"
 
 #ifndef __QUICKSORT_H
 #define __QUICKSORT_H
