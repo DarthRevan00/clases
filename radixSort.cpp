@@ -5,7 +5,7 @@ const int MAXVALUE {99'999'999};
 
 int *nums=new int[MAXNUMS];
 
-const int TAMPORCION {MAXNUMS/20}; //1000 numeros por porcion
+const int TAMPORCION {MAXNUMS/20}; //5.000.000 numeros por porcion
 
 struct bucket {
     int numeros[TAMPORCION];
@@ -13,7 +13,7 @@ struct bucket {
     struct bucket *sgte{NULL};
 };
 
-struct bucket *buckets=new struct bucket [10]; //array de punteros a listas de enteros
+struct bucket *buckets=new struct bucket [10]; //en buckets se almacenan los numeros del digito correspondiente
 
 int getDigit(int number, int dig){
     for (unsigned char i=0;i<dig;i++){
@@ -85,16 +85,21 @@ void visualizar(int n=1000){
 }
 
 
-int main(){
+void radixSort(){
     const int NM=getDigitCount(MAXVALUE);
-    initNumeros();
-    visualizar();
     for (int d=0;d<NM;d++){
         for (int i=0;i<MAXNUMS;i++){
             agregarNumeroBucket(nums[i],getDigit(nums[i],d));
         }
         vaciarBuckets();
     }
+
+}
+
+int main(){
+    initNumeros();
+    visualizar();
+    radixSort();
     visualizar();
     return 0;
 }
