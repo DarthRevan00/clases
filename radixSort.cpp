@@ -1,11 +1,7 @@
 #include <iostream>
+#include "numeros.h"
 
-const int MAXNUMS {100'000'000};
-const int MAXVALUE {99'999'999};
-
-int *nums=new int[MAXNUMS];
-
-const int TAMPORCION {MAXNUMS/20}; //5.000.000 numeros por porcion
+const int TAMPORCION {MAXNUMS/20+10}; //5.000.000 numeros por porcion
 
 struct bucket {
     int numeros[TAMPORCION];
@@ -29,12 +25,6 @@ int getDigitCount(int number){
     return count;
 }
 
-void initNumeros(){
-    srand(time(NULL));   // Initialization, should only be called once.
-    for (int i=0;i<MAXNUMS;i++){
-        nums[i]=rand()%MAXVALUE;      // Returns a pseudo-random integer between 0 and RAND_MAX.
-    }
-}
 
 
 //Funciones de BUCKETS
@@ -73,16 +63,6 @@ void vaciarBuckets(){
 }
 
 
-using namespace std;
-
-void visualizar(int n=1000){
-    cout<<"[";
-    for (int i=0;i<n && i<MAXNUMS;i++){
-        cout<<nums[i];
-        if (i+1<n)cout <<", ";
-    }
-    cout<<"]"<<endl;
-}
 
 
 void radixSort(){
@@ -96,10 +76,3 @@ void radixSort(){
 
 }
 
-int main(){
-    initNumeros();
-    visualizar();
-    radixSort();
-    visualizar();
-    return 0;
-}
