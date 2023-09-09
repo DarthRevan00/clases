@@ -3,6 +3,7 @@
 #include "numeros.h"
 #include "radixSort.h"
 #include "quickSort.h"
+#include "countingSort.h"
 
 void medirTiempo(char const *nombre,void (*funcion)()){
     clock_t begin=clock();
@@ -18,6 +19,8 @@ int main(){
 
     initNumeros();
     medirTiempo("QUICK SORT",quickSort);
-    
+
+    initNumeros();
+    medirTiempo("Counting SORT",countingSort);
     return 0;
 }
