@@ -7,5 +7,6 @@ const int MAXVALUE {99'999'999};
 extern int *nums;
 
 void initNumeros();
-void visualizar(int n=1000);
+void visualizar(int n=100);
 #endif
+
