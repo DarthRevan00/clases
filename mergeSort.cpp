@@ -1,5 +1,5 @@
 #include <iostream>
-#include <cstring>
+#include <algorithm>
 #include "numeros.h"
 
 
@@ -23,7 +23,7 @@ void mezclar(int *array,int lizq, int lder){
     }
 
     //copia resultado a parte adecuada
-    memcpy(array,res,sizeof(int)*largo);
+    std::copy(res,res+largo,array);
     delete[] res;
 }
 

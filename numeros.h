@@ -2,7 +2,7 @@
 #define __NUMS
 
 const int MAXNUMS {100'000'000};
-const int MAXVALUE {99'999'999};
+const int MAXVALUE {99'000'000};
 
 extern int *nums;
 
