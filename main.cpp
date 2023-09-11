@@ -8,6 +8,7 @@
 #include "vector.h"
 #include "array.h"
 #include "mergeSort.h"
+#include "radix_vector.h"
 
 void medirTiempo(char const *nombre,void (*funcion)()){
     clock_t begin=clock();
@@ -43,8 +44,11 @@ int main(){
     std::copy(respaldo,respaldo+MAXNUMS,nums);
     arrayTest();
 
+    std::copy(respaldo,respaldo+MAXNUMS,nums);
+    medirTiempo("Radix Vector", radix_vector_sort);
+    visualizar();
 
-    // delete [] respaldo;
+    delete [] respaldo;
     return 0;
 
 }

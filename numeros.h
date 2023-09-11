@@ -8,5 +8,9 @@ extern int *nums;
 
 void initNumeros();
 void visualizar(int n=100);
+
+int getDigit(int number, int dig);
+int getDigitCount(int number);
+
 #endif
 

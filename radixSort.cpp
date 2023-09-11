@@ -11,21 +11,6 @@ struct bucket {
 
 struct bucket *buckets=new struct bucket [10]; //en buckets se almacenan los numeros del digito correspondiente
 
-int getDigit(int number, int dig){
-    for (unsigned char i=0;i<dig;i++){
-        number/=10;
-    }
-    return number%10;
-}
-
-int getDigitCount(int number){
-    int count=1;
-    while ((number/=10)!=0)
-        count++;
-    return count;
-}
-
-
 
 //Funciones de BUCKETS
 void agregarNumeroBucket(int n,int digito){

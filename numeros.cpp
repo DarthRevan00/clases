@@ -21,3 +21,17 @@ void visualizar(int n){
     }
     cout<<"]"<<endl;
 }
+
+int getDigit(int number, int dig){
+    for (unsigned char i=0;i<dig;i++){
+        number/=10;
+    }
+    return number%10;
+}
+
+int getDigitCount(int number){
+    int count=1;
+    while ((number/=10)!=0)
+        count++;
+    return count;
+}
