@@ -6,6 +6,7 @@
 #include "quickSort.h"
 #include "countingSort.h"
 #include "vector.h"
+#include "array.h"
 #include "mergeSort.h"
 
 void medirTiempo(char const *nombre,void (*funcion)()){
@@ -39,7 +40,11 @@ int main(){
     std::copy(respaldo,respaldo+MAXNUMS,nums);
     vectorTest();
 
-    delete [] respaldo;
+    std::copy(respaldo,respaldo+MAXNUMS,nums);
+    arrayTest();
+
+
+    // delete [] respaldo;
     return 0;
 
 }

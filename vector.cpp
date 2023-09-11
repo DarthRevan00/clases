@@ -4,7 +4,7 @@
 #include "numeros.h"
 
 template <typename T> 
-void printVector(std::vector<T> v){
+void printVector(std::vector<T> & v){
     std::cout <<"[ ";
     int cont=0;
     for (T & element:v){
