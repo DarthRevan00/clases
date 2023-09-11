@@ -4,6 +4,7 @@
 #include "radixSort.h"
 #include "quickSort.h"
 #include "countingSort.h"
+#include "vector.h"
 
 void medirTiempo(char const *nombre,void (*funcion)()){
     clock_t begin=clock();
@@ -14,13 +15,16 @@ void medirTiempo(char const *nombre,void (*funcion)()){
 }
 
 int main(){
-    initNumeros();
-    medirTiempo("RADIX SORT",radixSort);
+    // initNumeros();
+    // medirTiempo("RADIX SORT",radixSort);
 
-    initNumeros();
-    medirTiempo("QUICK SORT",quickSort);
+    // initNumeros();
+    // medirTiempo("QUICK SORT",quickSort);
 
-    initNumeros();
-    medirTiempo("Counting SORT",countingSort);
+    // initNumeros();
+    // medirTiempo("Counting SORT",countingSort);
+
+    vectorTest();
     return 0;
+
 }
