@@ -23,11 +23,11 @@ void agregarNumeroBucket(int n,int digito){
     buc->numeros[buc->uso++]=n; // se agrega el numero al bucket
 }
 
-void vaciarBucketDig(struct bucket *buc, int *n){
+void vaciarBucketDig(struct bucket *buc, int &n){
     //copia los numeros a nums
-    for (int i=0;i<buc->uso;i++){
-        nums[(*n)++]=buc->numeros[i];
-    }
+    std::copy(buc->numeros,buc->numeros+buc->uso,nums+n);
+    n+=buc->uso;
+    
     //vacia las sgtes secciones
     if (buc->sgte!=NULL){
         vaciarBucketDig(buc->sgte,n);
@@ -43,7 +43,7 @@ void vaciarBuckets(){
     int n=0;
     //para cada digito
     for (int i=0;i<10;i++){
-        vaciarBucketDig(&(buckets[i]),&n);
+        vaciarBucketDig(&(buckets[i]),n);
     }
 }
 
