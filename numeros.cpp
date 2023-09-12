@@ -23,9 +23,11 @@ void visualizar(int n){
 }
 
 int getDigit(int number, int dig){
-    for (unsigned char i=0;i<dig;i++){
-        number/=10;
-    }
+    number/=potencias10[dig]; //una sola division
+
+    // for (unsigned char i=0;i<dig;i++){
+    //     number/=10;
+    // }
     return number%10;
 }
 
