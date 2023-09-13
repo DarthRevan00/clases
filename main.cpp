@@ -4,6 +4,7 @@
 #include "numeros.h"
 #include "radixSort.h"
 #include "quickSort.h"
+#include "quicksort2.h"
 #include "countingSort.h"
 #include "vector.h"
 #include "array.h"
@@ -26,12 +27,17 @@ int main(){
     medirTiempo("MERGE SORT",mergeSort);
     visualizar();
 
+
     std::copy(respaldo,respaldo+MAXNUMS,nums);
     medirTiempo("RADIX SORT",radixSort);
     visualizar();
 
     std::copy(respaldo,respaldo+MAXNUMS,nums);
     medirTiempo("QUICK SORT",quickSort);
+    visualizar();
+
+    std::copy(respaldo,respaldo+MAXNUMS,nums);
+    medirTiempo("QUICK SORT 2",quickSort2);
     visualizar();
 
     std::copy(respaldo,respaldo+MAXNUMS,nums);
