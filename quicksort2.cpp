@@ -37,8 +37,7 @@ void quickSort2(int *inicio,int *final){
     if (largo<=1){
         return;
     } else {
-        //optimizacion mayor 800 millis
-        int *pivote=inicio; //toma el primer elemento de pivote
+        int *pivote=((final-inicio)>>1) + inicio; //pivote elegido del medio
         int *p=particionar2(inicio, final, pivote); // en p devuelve la posicion definitiva de pivote
         quickSort2(inicio,p); // repite orden con lista izquierda al pivote
         quickSort2(p+1,final); // repite orden con lista derecha al pivote
